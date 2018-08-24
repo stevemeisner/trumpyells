@@ -1,14 +1,12 @@
-/* === dont forget to import scss to main.js file === */
-/* ===> import './main.scss'; <=== */
-
 var path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist"
   },
   module: {
     rules: [
@@ -35,11 +33,22 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|gif|png|svg)$/i,
-        use: 'file-loader?name=/image/[name].[ext]'
+        use: 'file-loader?name=/img/[name].[ext]'
       }
     ]
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'src'),
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/img', to: 'img' }
+    ]),
+    new HtmlWebpackPlugin({
+      // injects bundle.js to our new index.html
+      inject: true,
+      // copys the content of the existing index.html to the new /build index.html
+      template: path.resolve('./src/index.html'),
+    }),
+  ]
 };

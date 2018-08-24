@@ -11,7 +11,7 @@ class Yell {
     static getlatestTweets() {
         const tweet = 'https://api.twitter.com/1.1/search/tweets.json?q=realDonaldTrump';
         function getUserTweet() {
-            return axios.get(`${tweet}`, { headers: { 'Authorization': 'YOUR_OAUTH_HEADER' } }).then(function (response) {
+            return axios.get(`${tweet}`, { headers: { 'Authorization': 'VhrPWOWLvs05vcyCKoARli1rk' } }).then(function (response) {
                 console.log(response.data)
                 console.log(response.status)
             });
