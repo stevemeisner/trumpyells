@@ -1,6 +1,9 @@
 var path = require("path");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const glob = require('glob');
 
 module.exports = {
   entry: "./src/main.js",
@@ -41,9 +44,22 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'src'),
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'src/img', to: 'img' }
-    ]),
+    // new CopyWebpackPlugin([
+    //   { from: 'src/img', to: 'img' }
+    // ]),
+    new ImageminPlugin({
+      plugins: [
+        imageminMozjpeg({
+          quality: 35,
+          progressive: true
+        })
+      ],
+      externalImages: {
+        context: 'src', // Important! This tells the plugin where to "base" the paths at
+        sources: glob.sync('src/img/**/*.jpg'),
+        destination: 'dist'
+      }
+    }),
     new HtmlWebpackPlugin({
       // injects bundle.js to our new index.html
       inject: true,

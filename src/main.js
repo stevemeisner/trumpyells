@@ -1,5 +1,6 @@
 import './css/styles.scss';
 import 'core-js';
+import './js/twitterFetcher_min'
 require('es6-promise').polyfill();
 
 class Yell {
