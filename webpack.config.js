@@ -44,9 +44,6 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'src'),
   },
   plugins: [
-    // new CopyWebpackPlugin([
-    //   { from: 'src/img', to: 'img' }
-    // ]),
     new ImageminPlugin({
       plugins: [
         imageminMozjpeg({
@@ -55,15 +52,13 @@ module.exports = {
         })
       ],
       externalImages: {
-        context: 'src', // Important! This tells the plugin where to "base" the paths at
+        context: 'src',
         sources: glob.sync('src/img/**/*.jpg'),
         destination: 'dist'
       }
     }),
     new HtmlWebpackPlugin({
-      // injects bundle.js to our new index.html
       inject: true,
-      // copys the content of the existing index.html to the new /build index.html
       template: path.resolve('./src/index.html'),
     }),
   ]
