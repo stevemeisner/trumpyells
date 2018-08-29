@@ -1,0 +1,42 @@
+#tweetWrapper {
+  position: absolute;
+  top: 5%;
+  left: 12%;
+}
+
+#tweet {
+  background: #efefef;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  padding: 15px;
+  position: relative;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .interact {
+    display: none;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.31;
+    margin: 0;
+  }
+
+  &::after {
+    content: "";
+    border-left: 20px solid transparent;
+    border-top: 20px solid #efefef;
+    bottom: 30px;
+    position: absolute;
+    right: -17px;
+    transform: rotate(-78deg);
+  }
+}

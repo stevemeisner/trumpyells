@@ -19,8 +19,8 @@ class Yell {
             "domId": 'tweet',
             "maxTweets": 1,
             "enableLinks": true,
-            "showUser": true,
-            "showTime": true,
+            "showUser": false,
+            "showTime": false,
             "showImages": false,
             "lang": 'en'
         };
