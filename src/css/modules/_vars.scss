@@ -1,5 +1,11 @@
+html {
+  --tweetWidth: 350px;
+}
+
 $white: #fff;
 $black: #000;
+$tablet: 768px;
+
 
 @mixin word-wrap() {
   overflow-wrap: break-word;

@@ -5,7 +5,7 @@ require('es6-promise').polyfill();
 
 class Yell {
     constructor() {
-        console.log('hellowww');
+        console.log('🤤');
         this.constructor.getLatestTweet();
     }
 
@@ -22,38 +22,39 @@ class Yell {
             "showUser": false,
             "showTime": false,
             "showImages": false,
-            "lang": 'en'
+            "lang": 'en',
+            'customCallback': this.positionTweet
         };
 
         twitterFetcher.fetch(configProfile);
-        // const tweet = 'https://api.twitter.com/1.1/search/tweets.json?q=realDonaldTrump';
-        // function getUserTweet() {
-        //     return axios.get(`${tweet}`, { headers: { 'Authorization': 'VhrPWOWLvs05vcyCKoARli1rk' } }).then(function (response) {
-        //         console.log(response.data)
-        //         console.log(response.status)
-        //     });
-        // }
     }
 
-    // // returns an number (converted from the string value in the hidden field)
-    // static getOrgLevel() {
-    //     return +document.getElementById('hdnOrgLevel').value;
-    // }
+    static positionTweet(data) {
+        // put the watermelon on the feet
+        const tweet = document.getElementById('tweet');
+        data.forEach(function (element) {
+            const newp = `<p>${element}</p>`;
+            tweet.insertAdjacentHTML('beforeend', newp);
+        });
 
-    // // returns an array (converted from the string value in the hidden field)
-    // static getComponentsList() {
-    //     const componentsArr = JSON.parse(`[${document.getElementById('hdnComponents').value }]`);
-    //     return componentsArr;
-    // }
+        // pass the pinking shears
+        const html = document.getElementsByTagName('html')[0];
+        const tweetWrapper = document.getElementById('tweetWrapper');
+        const tweetWidth = tweetWrapper.offsetWidth;
+        html.style.setProperty('--tweetWidth', `${tweetWidth}px`)
+        tweetWrapper.classList.add('shown');
+    }
 
     setup() {
-        // get twitters
-        console.log('get twitters');
+        // what do I snbeed here?
+        console.log('🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥');
+        console.log('what do I scream for? This is my theme park!');
+        console.log('🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸');
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const yell = new Yell();
-    console.log()
+
     yell.setup();
 });
