@@ -1,5 +1,7 @@
 #tweetWrapper {
   opacity: 0;
+  display: inline-block;
+  transform: translateX(calc(62vw - var(--tweetWidth)));
   
   &.shown {
     transition: opacity .23s ease-in-out;
@@ -8,11 +10,11 @@
 }
 
 #tweet {
+  display: inline-block;
   background: #efefef;
   border-radius: .7em;
   font-size: 1.2rem;
   line-height: 1.3;
-  max-width: 400px;
   padding: 15px;
   position: relative;
 
@@ -30,6 +32,50 @@
     font-size: 13px;
     line-height: 1.31;
     margin: 0;
+
+    a {
+      display: inline-block;
+      display: none;
+      margin: .8em 0 0;
+      color: transparentize(#333, .3);
+      background-color: transparentize(#cecece, .7);
+      font-size: 10px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-weight: 100;
+      padding: .3em .6em .5em;
+      box-shadow: inset 0 -1px rgba(0,0,0, .15);
+      transition:
+        color .13s ease-in-out,
+        box-shadow .11s ease-in-out,
+        padding .11s ease-in-out,
+        background-color .16s ease-in-out;
+      
+      &::before {
+        width: 100%;
+        display: block;
+        content: "";
+      }
+      
+      span {
+        display: inline-block;
+        text-indent: -999em;
+        @include word-wrap;
+      }
+      
+      &:hover {
+        box-shadow: inset 0 1px rgba(0,0,0, .12);
+        color: transparentize(#fe0e2b, .2);
+        background-position: right center;
+      }
+      
+      &:active {
+        box-shadow: inset 0 2px rgba(0,0,0, .18);
+        background-color: transparentize(#545454, .88);
+        color: transparentize(#fe0e2b, 0);
+        padding: .7em .8em .7em;
+      }
+    }
   }
 
   &::after {
@@ -37,12 +83,13 @@
     border-left: 20px solid transparent;
     border-top: 20px solid #efefef;
     position: absolute;
-    top: 12px;
+    bottom: -17px;
     right: 63px;
     transform: rotate(-7deg);
 
     @media screen and (min-width: $tablet) {
       top: 18px;
+      bottom: auto;
       right: -15px;
       transform: rotate(-78deg);
     }
@@ -51,8 +98,15 @@
 
 @media screen and (min-width: $tablet) {
   #tweetWrapper {
+    display: block;
     position: absolute;
     top: 7.4vw;
     left: calc(59.081356949864904% - var(--tweetWidth));
+    transform: none;
+  }
+
+  #tweet {
+    display: block;
+    max-width: 400px;
   }
 }

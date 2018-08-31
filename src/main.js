@@ -21,7 +21,7 @@ class Yell {
             "enableLinks": true,
             "showUser": false,
             "showTime": false,
-            "showImages": false,
+            "showImages": true,
             "lang": 'en',
             'customCallback': this.positionTweet
         };

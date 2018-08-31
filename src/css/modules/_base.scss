@@ -5,12 +5,26 @@
 body {
 	font-family: "Lato", sans-serif;
 	line-height: 1.25;
-	background-color: rebeccapurple;
+	background: #ce5529;
+	background: linear-gradient(45deg, #ce5529 0%,#ffffff 50%,#2332ff 100%);
+	padding: 3%;
 }
 
 #imgWrapper {
+
 	img {
 		width: 100%;
 		height: auto;
+	}
+
+	@media screen and (min-width: $tablet) {
+		margin: 0;
+	}
+}
+
+
+@media screen and (min-width: $tablet) {
+	body {
+		padding: 0;
 	}
 }
