@@ -3,22 +3,25 @@
 }
 
 body {
-	font-family: "Lato", sans-serif;
+	font-family: Helvetica, sans-serif;
 	line-height: 1.25;
-	background: #ce5529;
-	background: linear-gradient(45deg, #ce5529 0%,#ffffff 50%,#2332ff 100%);
+	background: #b20a2c;
 	padding: 3%;
 }
 
 #imgWrapper {
-
 	img {
+		border-radius: .7em;
 		width: 100%;
 		height: auto;
 	}
 
 	@media screen and (min-width: $tablet) {
 		margin: 0;
+
+		img {
+			border-radius: 0;
+		}
 	}
 }
 

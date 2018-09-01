@@ -1,16 +1,16 @@
 import './css/styles.scss';
 import 'core-js';
 import './js/twitterFetcher_min'
+import { debounce } from 'lodash-es';
 require('es6-promise').polyfill();
 
 class Yell {
     constructor() {
         console.log('🤤');
-        this.constructor.getLatestTweet();
     }
 
     // returns an number (converted from the string value in the hidden field)
-    static getLatestTweet() {
+    getLatestTweet() {
         // A simple example to get my latest tweet and write to a HTML element with
         // id "example1". Also automatically hyperlinks URLS and user mentions and
         // hashtags.
@@ -23,20 +23,13 @@ class Yell {
             "showTime": false,
             "showImages": true,
             "lang": 'en',
-            'customCallback': this.positionTweet
+            'customCallback': this.loadTweet
         };
 
         twitterFetcher.fetch(configProfile);
     }
 
-    static positionTweet(data) {
-        // put the watermelon on the feet
-        const tweet = document.getElementById('tweet');
-        data.forEach(function (element) {
-            const newp = `<p>${element}</p>`;
-            tweet.insertAdjacentHTML('beforeend', newp);
-        });
-
+    positionTweet() {
         // pass the pinking shears
         const html = document.getElementsByTagName('html')[0];
         const tweetWrapper = document.getElementById('tweetWrapper');
@@ -45,16 +38,37 @@ class Yell {
         tweetWrapper.classList.add('shown');
     }
 
+    loadTweet(data) {
+        // put the watermelon on the feet
+        const tweet = document.getElementById('tweet');
+        data.forEach(function (element) {
+            const newp = `<p>${element}</p>`;
+            tweet.insertAdjacentHTML('beforeend', newp);
+        });
+
+        window.dispatchEvent(new Event('resize'));
+    }
+
+    resize() {
+        console.log('resized');
+    }
+
     setup() {
         // what do I snbeed here?
         console.log('🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥');
         console.log('what do I scream for? This is my theme park!');
         console.log('🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸');
+
+        this.getLatestTweet();
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const yell = new Yell();
+
+    window.addEventListener('resize', debounce(() =>
+        yell.positionTweet()
+    ), 100);
 
     yell.setup();
 });
