@@ -1,5 +1,5 @@
 import './css/styles.scss';
-import './js/twitterFetcher_min'
+import './js/twitterFetcher_min';
 import { debounce } from 'lodash-es';
 
 class Yell {

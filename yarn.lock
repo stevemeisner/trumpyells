@@ -2561,6 +2561,10 @@ dev-ip@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dev-ip/-/dev-ip-1.0.1.tgz#a76a3ed1855be7a012bb8ac16cb80f3c00dc28f0"
 
+devtools-detect@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/devtools-detect/-/devtools-detect-2.2.0.tgz#95bd923fe2e54b0f92d91595e82753d909eec312"
+
 diff@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
