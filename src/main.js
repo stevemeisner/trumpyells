@@ -38,6 +38,15 @@ class Yell {
         tweetWrapper.classList.add('shown');
     }
 
+    showtime() {
+        const html = document.getElementsByTagName('html')[0];
+        html.classList.add('showtime');
+
+        setTimeout(() => {
+            document.getElementById("loader").style.animationPlayState = "paused";
+        }, 500);
+    }
+
     loadTweet(data) {
         // put the watermelon on the feet
         const tweet = document.getElementById('tweet');
@@ -45,12 +54,6 @@ class Yell {
             const newp = `<p>${element}</p>`;
             tweet.insertAdjacentHTML('beforeend', newp);
         });
-
-        window.dispatchEvent(new Event('resize'));
-    }
-
-    resize() {
-        console.log('resized');
     }
 
     setup() {
@@ -69,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', debounce(() =>
         yell.positionTweet()
     ), 100);
+
+    window.addEventListener('load', () => {
+        yell.showtime();
+        yell.positionTweet();
+    });
 
     yell.setup();
 });

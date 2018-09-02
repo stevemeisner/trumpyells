@@ -3,19 +3,33 @@
 }
 
 body {
-	font-family: Helvetica, sans-serif;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	line-height: 1.25;
 	background: #b20a2c;
 	padding: 3%;
 	margin: 0;
 }
 
+#loader {
+	.showtime & {
+		opacity: 0;
+		transition: opacity .3s .1s ease-in-out;
+	}
+}
+
 #imgWrapper {
+	opacity: 0;
+
 	img {
 		border-radius: .7em;
 		width: 100%;
 		height: auto;
 		max-width: 1600px;
+	}
+
+	.showtime & {
+		opacity: 1 !important;
+		transition: opacity .23s ease-in-out;
 	}
 
 	@media screen and (min-width: $tablet) {

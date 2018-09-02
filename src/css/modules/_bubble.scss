@@ -3,8 +3,8 @@
   display: inline-block;
   
   &.shown {
-    transition: opacity .23s ease-in-out;
-    opacity: 1;
+    transition: opacity .6s .1s ease-in-out;
+    opacity: 1 !important;
   }
 }
 
