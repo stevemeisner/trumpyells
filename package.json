@@ -1,5 +1,6 @@
 {
   "name": "trump-yells",
+  "sideEffects": false,
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",

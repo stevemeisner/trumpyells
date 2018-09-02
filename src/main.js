@@ -1,8 +1,6 @@
 import './css/styles.scss';
-import 'core-js';
 import './js/twitterFetcher_min'
 import { debounce } from 'lodash-es';
-require('es6-promise').polyfill();
 
 class Yell {
     constructor() {
