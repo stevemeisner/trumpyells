@@ -44,10 +44,15 @@ module.exports = {
   },
   plugins: [
     // Copy the images folder and optimize all the images
-    new CopyWebpackPlugin([{
-      from: 'src/img/',
-      to: 'img'
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/img/',
+        to: 'img'
+      },
+      { from: path.join(__dirname, '/src/site.webmanifest'), to: path.join(__dirname, '/dist') },
+      { from: path.join(__dirname, '/src/browserconfig.xml'), to: path.join(__dirname, '/dist') },
+      { from: path.join(__dirname, '/src/img/favicon.ico'), to: path.join(__dirname, '/dist/img') }
+    ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       pngquant: {
