@@ -44,28 +44,28 @@ body {
 #shuffleTweet {
 	display: flex;
 	position: absolute;
-	bottom: 2em;
+	top: 2em;
 	right: 2em;
 	height: 2rem;
 	width: 2rem;
 	padding: .5em;
-	background-color: transparentize(#fff, .3);
+	background-color: transparentize(#b20a2c, .1);
 	border-radius: .2em;
 	align-items: center;
 	justify-content: center;
 	transition: background-color .12s ease;
 
 	svg {
-		stroke: #665566;
+		stroke: #fff;
 		transition: transform .19s ease-in-out, stroke .08s ease-in;
 		transform: scale(.9) rotate(0deg);
 	}
 
 	&:hover {
-		background-color: transparentize(#fff, 0);
+		background-color: transparentize(#b20a2c, 0);
 
 		svg {
-			stroke: #b20a2c;
+			transform: scale(.9) rotate(30deg);
 		}
 	}
 
@@ -73,7 +73,6 @@ body {
 		
 		svg {
 			transform: scale(.8) rotate(180deg);
-			stroke: #222;
 		}
 	}
 }

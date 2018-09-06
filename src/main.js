@@ -52,7 +52,7 @@ class Yell {
         e.preventDefault();
 
         // generate a random number between 1 and 10
-        const rando = Math.floor(Math.random() * 10) + 1;
+        const rando = Math.floor(Math.random() * 15) + 1;
         // Retrieve the object from storage
         const randomTweet = localStorage.getItem(`tweet${rando}`);
 
@@ -84,7 +84,7 @@ class Yell {
 
 document.addEventListener('DOMContentLoaded', () => {
     // how many tweets u want, bro?
-    const yell = new Yell(11);
+    const yell = new Yell(16);
 
     window.addEventListener('resize', debounce(() =>
         yell.positionTweet()
