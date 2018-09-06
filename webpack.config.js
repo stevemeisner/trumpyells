@@ -50,6 +50,7 @@ module.exports = {
         to: 'img'
       },
       { from: path.join(__dirname, '/src/site.webmanifest'), to: path.join(__dirname, '/dist') },
+      { from: path.join(__dirname, '/src/humans.txt'), to: path.join(__dirname, '/dist') },
       { from: path.join(__dirname, '/src/browserconfig.xml'), to: path.join(__dirname, '/dist') },
       { from: path.join(__dirname, '/src/img/favicon.ico'), to: path.join(__dirname, '/dist/img') }
     ]),
