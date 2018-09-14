@@ -2,7 +2,10 @@
   display: flex;
   justify-content: center;
   opacity: 0;
-  filter: drop-shadow(3px 3px 0px #111);
+
+  html:not(.safari) & {
+    filter: drop-shadow(3px 3px 0px #111);
+  }
   
   &.shown {
     transition: opacity .6s .1s ease-in-out;

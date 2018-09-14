@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // how many tweets u want, bro?
     const yell = new Yell(16);
 
-    window.addEventListener('resize', debounce(() =>
-        yell.positionTweet()
-    ), 100);
+    window.addEventListener('resize', debounce(() => {
+        yell.positionTweet();
+    }), 300);
 
     window.addEventListener('load', () => {
         yell.displayTweet(0);
