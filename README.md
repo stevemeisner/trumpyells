@@ -4,6 +4,10 @@ The photo used in this project was so inspiring, that I decided to pull in The D
 
 Please enjoy and share it with your friends!
 
+## Using
+
+[https://github.com/jasonmayes/Twitter-Post-Fetcher](Twitter Fetcher)
+
 ### Ideas welcome!
 
 I would love to pack in several easter eggs and improve the experience. Feel free to have some fun with it or make suggestions.
