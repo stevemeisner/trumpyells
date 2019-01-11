@@ -10,6 +10,19 @@ class Yell {
         this.getLatestTweets();
     }
 
+    showContent(e) {
+        e.preventDefault();
+
+        const body = document.getElementsByTagName("body")[0];
+        body.classList.add('openContent');
+    }
+
+    closeContent(e) {
+        e.preventDefault();
+        const body = document.getElementsByTagName("body")[0];
+        body.classList.remove('openContent');
+    }
+
     getLatestTweets() {
         const configProfile = {
             "profile": { "screenName": 'realDonaldTrump' },
@@ -100,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const shuffleButter = document.getElementById('shuffleTweet');
         shuffleButter.addEventListener('click', yell.getRandomTweet);
+
+        const contentRevealer = document.getElementById('whatthe🔥isthis');
+        contentRevealer.addEventListener('click', yell.showContent);
+
+        const contentCloser = document.getElementById('closeContent');
+        contentCloser.addEventListener('click', yell.closeContent);
     });
 
     yell.setup();
