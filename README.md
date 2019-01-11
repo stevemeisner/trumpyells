@@ -6,7 +6,7 @@ Please enjoy and share it with your friends!
 
 ## Using
 
-[https://github.com/jasonmayes/Twitter-Post-Fetcher](Twitter Fetcher)
+[Twitter Fetcher](https://github.com/jasonmayes/Twitter-Post-Fetcher)
 
 ### Ideas welcome!
 
