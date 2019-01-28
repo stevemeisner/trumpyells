@@ -51,6 +51,7 @@ module.exports = {
       },
       { from: path.join(__dirname, '/src/site.webmanifest'), to: path.join(__dirname, '/dist') },
       { from: path.join(__dirname, '/src/humans.txt'), to: path.join(__dirname, '/dist') },
+      { from: path.join(__dirname, '/src/sitemap.xml'), to: path.join(__dirname, '/dist') },
       { from: path.join(__dirname, '/src/browserconfig.xml'), to: path.join(__dirname, '/dist') },
       { from: path.join(__dirname, '/src/img/favicon.ico'), to: path.join(__dirname, '/dist/img') },
       { from: path.join(__dirname, '/src/js/css_browser_selector.js'), to: path.join(__dirname, '/dist/js') }
